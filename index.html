@@ -1,16 +1,20 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unlimit Academy</title>
     
-    <script src="./Unlimit AI Education_files/saved_resource"></script>
+    <!-- Подключение Tailwind CSS напрямую из интернета (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
     
-    <link rel="preconnect" href="https://fonts.googleapis.com/">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-    <link href="./Unlimit AI Education_files/css2" rel="stylesheet">
+    <!-- Google Fonts напрямую из интернета -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono&display=swap" rel="stylesheet">
     
-    <script src="./Unlimit AI Education_files/lucide@latest"></script>
+    <!-- Lucide Icons напрямую из интернета -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 
     <script>
         tailwind.config = {
@@ -108,12 +112,14 @@
 </head>
 <body class="font-sans antialiased selection:bg-unlimit-lime selection:text-unlimit-text min-h-screen flex flex-col relative">
 
+    <!-- Fluid Background -->
     <div class="aurora-bg pointer-events-none">
         <div class="absolute top-[-20%] right-[-10%] w-[60%] h-[60%] bg-gradient-to-b from-unlimit-lime to-unlimit-teal opacity-30 rounded-full blur-[120px] animate-blob"></div>
         <div class="absolute bottom-[-20%] left-[-10%] w-[50%] h-[50%] bg-gradient-to-t from-unlimit-cyan to-unlimit-teal opacity-30 rounded-full blur-[100px] animate-blob" style="animation-delay: 2s;"></div>
         <div class="absolute top-[40%] left-[40%] w-[30%] h-[30%] bg-unlimit-purpleLight opacity-20 rounded-full blur-[80px] animate-blob" style="animation-delay: 4s;"></div>
     </div>
 
+    <!-- Header (С оригинальным зеленым логотипом-картинкой) -->
     <header class="sticky top-0 z-50 w-full px-6 py-4 glass-panel border-b-0 border-white/40 shadow-sm transition-all duration-300">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="flex items-center gap-3 cursor-pointer" onclick="showHome()">
@@ -123,8 +129,10 @@
         </div>
     </header>
 
+    <!-- Main Content -->
     <main class="flex-grow w-full max-w-7xl mx-auto px-4 py-8 md:py-12 relative z-30">
         
+        <!-- ================= HOME VIEW ================= -->
         <div id="home-view" class="space-y-12 animate-fade-in">
             <div class="text-center max-w-3xl mx-auto mb-12">
                 <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 drop-shadow-sm mb-6">Welcome to the Unlimit Academy</h2>
@@ -134,10 +142,11 @@
             <div id="courses-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8"></div>
         </div>
 
+        <!-- ================= COURSE DETAILS VIEW ================= -->
         <div id="course-view" class="animate-fade-in hidden">
             <div class="mb-8">
                 <button onclick="showHome()" class="flex items-center text-unlimit-purple font-semibold hover:text-indigo-800 transition-colors bg-white/50 px-4 py-2 rounded-lg backdrop-blur-sm border border-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-left" aria-hidden="true" class="lucide lucide-arrow-left w-5 h-5 mr-2"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>
+                    <i data-lucide="arrow-left" class="w-5 h-5 mr-2"></i>
                     Back to Academy Home
                 </button>
             </div>
@@ -163,6 +172,7 @@
 
     </main>
 
+    <!-- Footer -->
     <footer class="glass-panel border-t border-white/50 mt-auto py-6 relative z-30">
         <div class="container mx-auto text-center text-slate-500 font-mono text-sm">
             <p>© 2026 Unlimit Academy. Learn, build, and transform the industry.</p>
@@ -315,4 +325,5 @@
             showHome();
         });
     </script>
-</body></html>
+</body>
+</html>
