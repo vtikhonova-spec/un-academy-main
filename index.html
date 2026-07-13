@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlimit Academy</title>
+    
+    <script src="./Unlimit AI Education_files/saved_resource"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="./Unlimit AI Education_files/css2" rel="stylesheet">
+    
+    <script src="./Unlimit AI Education_files/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        unlimit: {
+                            bg: '#ffffff',
+                            text: '#0f172a',
+                            textLight: '#475569',
+                            lime: '#bef264',
+                            limeDark: '#65a30d',
+                            teal: '#2dd4bf',
+                            cyan: '#67e8f9',
+                            purple: '#7c3aed',
+                            purpleLight: '#c4b5fd',
+                        }
+                    },
+                    fontFamily: {
+                        mono: ['"Space Mono"', 'monospace'],
+                        sans: ['"Inter"', 'sans-serif'],
+                    },
+                    animation: {
+                        'blob': 'blob 10s infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        fadeIn: {
+                            from: { opacity: 0, transform: 'translateY(10px)' },
+                            to: { opacity: 1, transform: 'translateY(0)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #0f172a;
+            overflow-x: hidden;
+        }
+
+        .aurora-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #ffffff;
+            z-index: -10;
+            overflow: hidden;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+        }
+
+        .visual-card {
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .visual-card:hover {
+            background: rgba(255, 255, 255, 0.95);
+            border-color: #bef264;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 20px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-font {
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+            letter-spacing: -0.05em;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-unlimit-lime selection:text-unlimit-text min-h-screen flex flex-col relative">
+
+    <div class="aurora-bg pointer-events-none">
+        <div class="absolute top-[-20%] right-[-10%] w-[60%] h-[60%] bg-gradient-to-b from-unlimit-lime to-unlimit-teal opacity-30 rounded-full blur-[120px] animate-blob"></div>
+        <div class="absolute bottom-[-20%] left-[-10%] w-[50%] h-[50%] bg-gradient-to-t from-unlimit-cyan to-unlimit-teal opacity-30 rounded-full blur-[100px] animate-blob" style="animation-delay: 2s;"></div>
+        <div class="absolute top-[40%] left-[40%] w-[30%] h-[30%] bg-unlimit-purpleLight opacity-20 rounded-full blur-[80px] animate-blob" style="animation-delay: 4s;"></div>
+    </div>
+
+    <header class="sticky top-0 z-50 w-full px-6 py-4 glass-panel border-b-0 border-white/40 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3 cursor-pointer" onclick="showHome()">
+                <img src="./Unlimit AI Education_files/unlimit_com_logo" alt="Unlimit Logo" class="w-10 h-10 rounded-md shadow-sm">
+                <span class="logo-font text-xl md:text-2xl font-bold text-slate-800 tracking-tight">Unlimit <span class="text-unlimit-purple">Academy 🎓</span></span>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow w-full max-w-7xl mx-auto px-4 py-8 md:py-12 relative z-30">
+        
+        <div id="home-view" class="space-y-12 animate-fade-in">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 drop-shadow-sm mb-6">Welcome to the Unlimit Academy</h2>
+                <p class="text-lg text-slate-600 font-medium leading-relaxed">To help you ramp up quickly and understand our business, products, and industry, all new employees complete a structured onboarding learning path through the Unlimit Academy.</p>
+            </div>
+            
+            <div id="courses-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8"></div>
+        </div>
+
+        <div id="course-view" class="animate-fade-in hidden">
+            <div class="mb-8">
+                <button onclick="showHome()" class="flex items-center text-unlimit-purple font-semibold hover:text-indigo-800 transition-colors bg-white/50 px-4 py-2 rounded-lg backdrop-blur-sm border border-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-left" aria-hidden="true" class="lucide lucide-arrow-left w-5 h-5 mr-2"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>
+                    Back to Academy Home
+                </button>
+            </div>
+            
+            <div class="mb-12 glass-panel p-8 rounded-2xl flex flex-col md:flex-row items-center md:items-start gap-6">
+                <div id="course-header-icon" class="p-4 bg-white rounded-xl shadow-sm text-unlimit-purple border border-slate-100 shrink-0"></div>
+                <div class="flex-grow">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-2">
+                        <h2 id="course-view-title" class="text-3xl md:text-4xl font-extrabold text-slate-900"></h2>
+                        <a id="course-main-link" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-bold bg-unlimit-purple text-white px-4 py-2 rounded-xl hover:bg-opacity-90 transition-all shadow-sm">
+                            Open Dashboard <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                    <p id="course-view-desc" class="text-lg text-slate-600 font-medium"></p>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="text-xl font-mono text-slate-500 mb-6 uppercase tracking-wider pl-2">Course Syllabus & Chapters</h3>
+                <div id="chapters-container" class="grid grid-cols-1 lg:grid-cols-2 gap-5"></div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="glass-panel border-t border-white/50 mt-auto py-6 relative z-30">
+        <div class="container mx-auto text-center text-slate-500 font-mono text-sm">
+            <p>© 2026 Unlimit Academy. Learn, build, and transform the industry.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- ACADEMY DATA OBJECTS ---
+        const academyData = {
+            "Course 1: Welcome to Unlimit": {
+                icon: 'dna',
+                subtitle: "Culture & DNA",
+                mainUrl: "https://confluence.unl24.com/pages/viewpage.action?pageId=284900674",
+                description: "Who we are, what we build, how we work, and the values behind it. A good starting point for everyone.",
+                chapters: [
+                    { title: "Chapter 1: Who We Are & What We Do", url: "https://confluence.unl24.com/pages/viewpage.action?pageId=284900678", desc: "Our global mission, history, and foundational pillars." },
+                    { title: "Chapter 2: Our Products & Revenue Model", url: "https://confluence.unl24.com/pages/viewpage.action?pageId=284900680", desc: "Understanding our business streams and how Unlimit generates profit." },
+                    { title: "Chapter 3: Values & Culture – Our Way of Working", url: "https://confluence.unl24.com/pages/viewpage.action?pageId=284900684", desc: "The internal behavior handbook, DNA principles, and corporate values." },
+                    { title: "Chapter 4: Operations & Tools", url: "https://confluence.unl24.com/pages/viewpage.action?pageId=284900687", desc: "Overview of corporate infrastructure and operational essentials." }
+                ]
+            },
+            "Course 2: Fintech Industry": {
+                icon: 'landmark',
+                subtitle: "Fundamentals & Market",
+                mainUrl: "https://confluence.unl24.com/pages/viewpage.action?pageId=284900695",
+                description: "Key terms, core concepts, and the major global players shaping our payments market.",
+                chapters: [
+                    { title: "Chapter 1: The Payments Ecosystem", url: "https://confluence.unl24.com/display/C2FIF1/Chapter+1%3A+The+Payments+Ecosystem", desc: "Introduction to processing gates, acquirers, issuers, and financial flow." },
+                    { title: "Chapter 2: Card Payments: Features & Pricing", url: "https://confluence.unl24.com/pages/viewpage.action?pageId=284900700", desc: "Interchange fees, card scheme mechanisms, and basic pricing models." },
+                    { title: "Chapter 3: Alternative Payment Methods (APMs)", url: "https://confluence.unl24.com/pages/viewpage.action?pageId=284900703", desc: "E-wallets, instant transfers, and local payment methods globally." },
+                    { title: "Chapter 4: Industries & Merchant Profiles", url: "https://confluence.unl24.com/pages/viewpage.action?pageId=284900707", desc: "Understanding the targets: high-risk vs. low-risk merchants and businesses." },
+                    { title: "Chapter 5: Fraud & Risk — Market View", url: "https://confluence.unl24.com/pages/viewpage.action?pageId=284900710", desc: "How to spot malicious behavior, chargebacks, and security standards." },
+                    { title: "Chapter 6: Fintech Glossary", url: "https://confluence.unl24.com/pages/viewpage.action?pageId=284900712", desc: "Simple, highly practical reference dictionary of payment jargon." },
+                    { title: "Chapter 7: Data Protection", url: "https://confluence.unl24.com/display/C2FIF1/Chapter+7%3A+Data+Protection", desc: "GDPR framework and processing merchant/cardholder information securely." },
+                    { title: "Chapter 8: Basic Compliance", url: "https://confluence.unl24.com/display/C2FIF1/Chapter+8%3A+Basic+Compliance", desc: "KYC/KYB requirements, regulatory limits, and monitoring processes." }
+                ]
+            },
+            "Course 3: Deep Product & Finance": {
+                icon: 'wallet',
+                subtitle: "Advanced Features & Flows",
+                mainUrl: "https://confluence.unl24.com/pages/viewpage.action?pageId=284887734",
+                description: "Most relevant for product-facing roles. A detailed look at our product features, payment flows, onboarding, and internal reporting systems.",
+                chapters: [
+                    { title: "Chapter 1: Introduction to Acquiring: Product, Positioning & Sales", url: "https://confluence.unl24.com/pages/viewpage.action?pageId=284891383", desc: "Core positioning, value selling points, and our sales strategy." },
+                    { title: "Chapter 2: Card Acquiring & APMs Capabilities: Payins and Payouts", url: "https://confluence.unl24.com/display/C3DPF/Section+1%3A+Card+Acquiring+and+APMs+capabilities%3A+Payins+and+Payouts", desc: "Deep technical dive into complex Payins and Payouts system operations." },
+                    { title: "Chapter 3: Industries & Onboarding Logic", url: "https://confluence.unl24.com/pages/viewpage.action?pageId=284887812", desc: "The background operational flow of approving new commercial clients." },
+                    { title: "Chapter 4: Product Features & Technical", url: "https://confluence.unl24.com/pages/viewpage.action?pageId=284887842", desc: "Integrations, APIs, tokenization, routing, and terminal options." },
+                    { title: "Chapter 5: Financial Mathematics & Pricing", url: "https://confluence.unl24.com/pages/viewpage.action?pageId=284887885", desc: "How we calculate merchant fees, margins, and operational costs." },
+                    { title: "Chapter 6: Main Systems & Reporting", url: "https://confluence.unl24.com/pages/viewpage.action?pageId=284887900", desc: "Back-office walkthrough, analytics tools, and dashboard setup." },
+                    { title: "Chapter 7: CSM Expertise & Merchant Management", url: "https://confluence.unl24.com/pages/viewpage.action?pageId=284887910", desc: "Customer success framework: retention, cross-selling, and account support." },
+                    { title: "Chapter 8: Regulation & Compliance & Fraud Prevention", url: "https://confluence.unl24.com/pages/viewpage.action?pageId=284887923", desc: "Advanced operational risk filters, monitoring tools, and audits." },
+                    { title: "Chapter 9: Existing Partnerships", url: "https://confluence.unl24.com/display/C3DPF/Section+8%3A+Existing+partnerships", desc: "Our active financial integrations, card schemes, and bank connectivity." }
+                ]
+            }
+        };
+
+        // --- DOM ELEMENTS ---
+        const views = {
+            home: document.getElementById('home-view'),
+            course: document.getElementById('course-view')
+        };
+        const coursesGrid = document.getElementById('courses-grid');
+        const chaptersContainer = document.getElementById('chapters-container');
+
+        // --- NAVIGATION LOGIC ---
+        function showHome() {
+            views.course.classList.add('hidden');
+            views.home.classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            lucide.createIcons();
+        }
+
+        function showCourse(courseName) {
+            renderCourseView(courseName);
+            views.home.classList.add('hidden');
+            views.course.classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            lucide.createIcons();
+        }
+
+        // --- RENDER FUNCTIONS ---
+        function renderCoursesHomeView() {
+            coursesGrid.innerHTML = '';
+            let delay = 0;
+            
+            for (const [courseName, data] of Object.entries(academyData)) {
+                const card = document.createElement('div');
+                card.className = "visual-card glass-panel p-8 rounded-2xl cursor-pointer flex flex-col h-full group animate-fade-in";
+                card.style.animationDelay = `${delay}ms`;
+                card.onclick = () => showCourse(courseName);
+
+                card.innerHTML = `
+                    <div class="mb-5 w-16 h-16 rounded-2xl bg-white border border-slate-100 flex items-center justify-center text-unlimit-purple shadow-sm group-hover:scale-110 transition-transform">
+                        <i data-lucide="${data.icon}" class="w-8 h-8"></i>
+                    </div>
+                    <div class="text-xs font-bold text-unlimit-teal uppercase tracking-wider font-mono mb-1">${data.subtitle}</div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3 tracking-tight">${courseName}</h3>
+                    <p class="text-slate-600 font-medium leading-relaxed flex-grow">${data.description}</p>
+                    <div class="mt-6 text-sm font-bold text-unlimit-purple flex items-center gap-1 opacity-80 group-hover:opacity-100 transition-opacity">
+                        View Syllabus <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </div>
+                `;
+                coursesGrid.appendChild(card);
+                delay += 100;
+            }
+            lucide.createIcons();
+        }
+
+        function renderCourseView(courseName) {
+            const course = academyData[courseName];
+            
+            document.getElementById('course-view-title').textContent = courseName;
+            document.getElementById('course-view-desc').textContent = course.description;
+            document.getElementById('course-main-link').href = course.mainUrl;
+            document.getElementById('course-header-icon').innerHTML = `<i data-lucide="${course.icon}" class="w-10 h-10"></i>`;
+            
+            chaptersContainer.innerHTML = '';
+            let delay = 0;
+
+            course.chapters.forEach(chapter => {
+                const item = document.createElement('a');
+                item.href = chapter.url;
+                item.target = "_blank";
+                item.rel = "noopener noreferrer";
+                item.className = "block visual-card p-6 rounded-xl hover:border-unlimit-lime transition-all duration-300 h-full flex flex-col group animate-fade-in";
+                item.style.animationDelay = `${delay}ms`;
+
+                item.innerHTML = `
+                    <div class="flex items-start gap-4">
+                        <div class="p-2 bg-white rounded-lg shadow-sm shrink-0 border border-slate-100 text-unlimit-purple group-hover:bg-unlimit-purple group-hover:text-white transition-all">
+                            <i data-lucide="book-open" class="w-5 h-5"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <h4 class="text-lg font-bold text-slate-800 leading-tight mb-1 group-hover:text-unlimit-purple transition-colors">${chapter.title}</h4>
+                            <p class="text-sm text-slate-600 font-medium leading-relaxed">${chapter.desc}</p>
+                        </div>
+                        <div class="shrink-0 text-slate-300 group-hover:text-unlimit-teal transition-colors">
+                            <i data-lucide="external-link" class="w-5 h-5"></i>
+                        </div>
+                    </div>
+                `;
+                chaptersContainer.appendChild(item);
+                delay += 50;
+            });
+        }
+
+        // --- INITIALIZATION ---
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCoursesHomeView();
+            showHome();
+        });
+    </script>
+</body></html>
