@@ -115,18 +115,18 @@
         <div class="absolute top-[40%] left-[40%] w-[30%] h-[30%] bg-unlimit-purpleLight opacity-20 rounded-full blur-[80px] animate-blob" style="animation-delay: 4s;"></div>
     </div>
 
-    <header class="sticky top-0 z-50 w-full px-6 py-4 glass-panel border-b-0 border-white/40 shadow-sm transition-all duration-300">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-            <div class="flex items-center gap-3 cursor-pointer" onclick="showHome()">
+    <header class="sticky top-0 z-50 w-full px-8 py-5 glass-panel border-b border-slate-100 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center cursor-pointer" onclick="showHome()">
                 <span class="logo-font text-xl md:text-2xl font-bold text-slate-800 tracking-tight">Unlimit <span class="text-unlimit-purple">Academy 🎓</span></span>
             </div>
         </div>
     </header>
 
-    <main class="flex-grow w-full max-w-7xl mx-auto px-4 py-8 md:py-12 relative z-30">
+    <main class="flex-grow w-full max-w-7xl mx-auto px-6 pt-16 md:pt-24 pb-12 relative z-30">
         
-        <div id="home-view" class="space-y-12 animate-fade-in">
-            <div class="text-center max-w-3xl mx-auto mb-12">
+        <div id="home-view" class="space-y-16 animate-fade-in">
+            <div class="text-center max-w-3xl mx-auto">
                 <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 drop-shadow-sm mb-6">Welcome to the Unlimit Academy</h2>
                 <p class="text-lg text-slate-600 font-medium leading-relaxed">To help you ramp up quickly and understand our business, products, and industry, all new employees complete a structured onboarding learning path through the Unlimit Academy.</p>
             </div>
@@ -177,4 +177,18 @@
                 subtitle: "Culture & DNA",
                 mainUrl: "https://confluence.unl24.com/pages/viewpage.action?pageId=284900674",
                 description: "Who we are, what we build, how we work, and the values behind it. A good starting point for everyone.",
-                chapters:
+                chapters: [
+                    { title: "Chapter 1: Who We Are & What We Do", url: "https://confluence.unl24.com/pages/viewpage.action?pageId=284900678", desc: "Our global mission, history, and foundational pillars." },
+                    { title: "Chapter 2: Our Products & Revenue Model", url: "https://confluence.unl24.com/pages/viewpage.action?pageId=284900680", desc: "Understanding our business streams and how Unlimit generates profit." },
+                    { title: "Chapter 3: Values & Culture – Our Way of Working", url: "https://confluence.unl24.com/pages/viewpage.action?pageId=284900684", desc: "The internal behavior handbook, DNA principles, and corporate values." },
+                    { title: "Chapter 4: Operations & Tools", url: "https://confluence.unl24.com/pages/viewpage.action?pageId=284900687", desc: "Overview of corporate infrastructure and operational essentials." }
+                ]
+            },
+            "Course 2: Fintech Industry": {
+                icon: 'landmark',
+                subtitle: "Fundamentals & Market",
+                mainUrl: "https://confluence.unl24.com/pages/viewpage.action?pageId=284900695",
+                description: "Key terms, core concepts, and the major global players shaping our payments market.",
+                chapters: [
+                    { title: "Chapter 1: The Payments Ecosystem", url: "https://confluence.unl24.com/display/C2FIF1/Chapter+1%3A+The+Payments+Ecosystem", desc: "Introduction to processing gates, acquirers, issuers, and financial flow." },
+                    { title: "Chapter 2: Card Payments: Features & Pricing", url: "
