@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unlimit Academy</title>
     
+    <!-- Подключение Tailwind CSS напрямую из интернета (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
     
+    <!-- Подключение Montserrat (для подстраховки) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Space+Mono&display=swap" rel="stylesheet">
     
+    <!-- Lucide Icons напрямую из интернета -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <script>
@@ -61,27 +64,31 @@
     </script>
 
     <style>
-        /* Подключение локального шрифта Nekst */
+        /* Подключение твоих локальных TTF-файлов шрифта Nekst */
         @font-face {
             font-family: 'Nekst';
-            src: url('./fonts/Nekst-Regular.woff2') format('woff2'),
-                 url('./fonts/Nekst-Regular.woff') format('woff');
+            src: url('./fonts/Nekst-Regular.ttf') format('truetype');
             font-weight: 400;
             font-style: normal;
             font-display: swap;
         }
         @font-face {
             font-family: 'Nekst';
-            src: url('./fonts/Nekst-Bold.woff2') format('woff2'),
-                 url('./fonts/Nekst-Bold.woff') format('woff');
+            src: url('./fonts/Nekst-SemiBold.ttf') format('truetype');
+            font-weight: 600;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Nekst';
+            src: url('./fonts/Nekst-Bold.ttf') format('truetype');
             font-weight: 700;
             font-style: normal;
             font-display: swap;
         }
         @font-face {
             font-family: 'Nekst';
-            src: url('./fonts/Nekst-Black.woff2') format('woff2'),
-                 url('./fonts/Nekst-Black.woff') format('woff');
+            src: url('./fonts/Nekst-Black.ttf') format('truetype');
             font-weight: 900;
             font-style: normal;
             font-display: swap;
@@ -134,12 +141,14 @@
 </head>
 <body class="font-sans antialiased selection:bg-[#C9F73A] selection:text-slate-900 min-h-screen flex flex-col relative">
 
+    <!-- Fluid Background -->
     <div class="aurora-bg pointer-events-none">
         <div class="absolute top-[-15%] right-[-10%] w-[65%] h-[65%] bg-gradient-to-br from-[#06DBF3] via-[#C9F73A] to-[#416BD6] opacity-35 rounded-full blur-[110px] animate-blob"></div>
         <div class="absolute bottom-[-15%] left-[-10%] w-[55%] h-[55%] bg-gradient-to-t from-[#C9F73A] via-[#06DBF3] to-[#416BD6] opacity-30 rounded-full blur-[100px] animate-blob" style="animation-delay: 2s;"></div>
         <div class="absolute top-[35%] left-[35%] w-[35%] h-[35%] bg-[#416BD6] opacity-15 rounded-full blur-[90px] animate-blob" style="animation-delay: 4s;"></div>
     </div>
 
+    <!-- Header (Шрифт теперь изящный SemiBold) -->
     <header class="sticky top-0 z-50 w-full px-6 py-3 glass-panel border-b border-slate-100 shadow-sm transition-all duration-300">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <div class="flex items-center gap-3 cursor-pointer" onclick="showHome()">
@@ -148,8 +157,10 @@
         </div>
     </header>
 
+    <!-- Main Content -->
     <main class="flex-grow w-full max-w-7xl mx-auto px-4 py-6 md:py-8 relative z-30 flex flex-col justify-center">
         
+        <!-- ================= HOME VIEW ================= -->
         <div id="home-view" class="space-y-6 md:space-y-8 animate-fade-in">
             <div class="text-center max-w-3xl mx-auto mb-2">
                 <h2 class="text-3xl md:text-4xl font-black text-slate-900 tracking-tight mb-3 leading-tight">Welcome to the Unlimit Academy</h2>
@@ -159,6 +170,7 @@
             <div id="courses-grid" class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6"></div>
         </div>
 
+        <!-- ================= COURSE DETAILS VIEW ================= -->
         <div id="course-view" class="animate-fade-in hidden">
             <div class="mb-5">
                 <button onclick="showHome()" class="flex items-center text-[#416BD6] text-sm font-bold hover:text-blue-800 transition-colors bg-white/80 hover:bg-white px-4 py-2 rounded-xl border border-slate-100 shadow-sm">
@@ -188,6 +200,7 @@
 
     </main>
 
+    <!-- Footer -->
     <footer class="glass-panel border-t border-slate-100 mt-auto py-4 relative z-30">
         <div class="container mx-auto text-center text-slate-400 font-medium text-xs">
             <p>© 2026 Unlimit Academy. Learn, build, and transform the industry.</p>
