@@ -9,7 +9,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Space+Mono&display=swap" rel="stylesheet">
     
     <script src="https://unpkg.com/lucide@latest"></script>
 
@@ -22,28 +22,28 @@
                             bg: '#ffffff',
                             text: '#0f172a',
                             textLight: '#475569',
-                            lime: '#bef264',
-                            limeDark: '#65a30d',
-                            teal: '#2dd4bf',
+                            lime: '#C9F73A',        // Фирменный неоново-лаймовый
+                            limeDark: '#b2db29',
+                            teal: '#06DBF3',        // Насыщенный бирюзовый
                             cyan: '#67e8f9',
-                            purple: '#7c3aed',
-                            purpleLight: '#c4b5fd',
+                            purple: '#416BD6',      // Фирменный синий
+                            purpleLight: '#416BD6',
                         }
                     },
                     fontFamily: {
                         mono: ['"Space Mono"', 'monospace'],
-                        sans: ['"Inter"', 'sans-serif'],
+                        sans: ['"Nekst"', '"Montserrat"', 'sans-serif'], 
                     },
                     animation: {
-                        'blob': 'blob 10s infinite',
+                        'blob': 'blob 12s infinite',
                         'float': 'float 6s ease-in-out infinite',
-                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                        'fade-in': 'fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
                     },
                     keyframes: {
                         blob: {
                             '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '33%': { transform: 'translate(40px, -50px) scale(1.15)' },
+                            '66%': { transform: 'translate(-30px, 30px) scale(0.95)' },
                             '100%': { transform: 'translate(0px, 0px) scale(1)' },
                         },
                         float: {
@@ -61,10 +61,37 @@
     </script>
 
     <style>
+        /* Подключение локального шрифта Nekst */
+        @font-face {
+            font-family: 'Nekst';
+            src: url('./fonts/Nekst-Regular.woff2') format('woff2'),
+                 url('./fonts/Nekst-Regular.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Nekst';
+            src: url('./fonts/Nekst-Bold.woff2') format('woff2'),
+                 url('./fonts/Nekst-Bold.woff') format('woff');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Nekst';
+            src: url('./fonts/Nekst-Black.woff2') format('woff2'),
+                 url('./fonts/Nekst-Black.woff') format('woff');
+            font-weight: 900;
+            font-style: normal;
+            font-display: swap;
+        }
+
         body {
             background-color: #ffffff;
             color: #0f172a;
             overflow-x: hidden;
+            font-family: 'Nekst', 'Montserrat', sans-serif;
         }
 
         .aurora-bg {
@@ -79,92 +106,90 @@
         }
 
         .glass-panel {
-            background: rgba(255, 255, 255, 0.65);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.8);
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.95);
+            box-shadow: 0 10px 40px -10px rgba(65, 107, 214, 0.05);
         }
 
         .visual-card {
-            background: rgba(255, 255, 255, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.9);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(65, 107, 214, 0.05);
+            box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.02);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .visual-card:hover {
-            background: rgba(255, 255, 255, 0.95);
-            border-color: #bef264;
+            background: #ffffff;
+            border-color: rgba(65, 107, 214, 0.25); 
             transform: translateY(-4px);
-            box-shadow: 0 12px 20px -3px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 16px 30px -10px rgba(65, 107, 214, 0.08);
         }
 
         .logo-font {
-            font-family: 'Inter', sans-serif;
-            font-weight: 800;
-            letter-spacing: -0.05em;
+            letter-spacing: -0.04em;
         }
     </style>
 </head>
-<body class="font-sans antialiased selection:bg-unlimit-lime selection:text-unlimit-text min-h-screen flex flex-col relative">
+<body class="font-sans antialiased selection:bg-[#C9F73A] selection:text-slate-900 min-h-screen flex flex-col relative">
 
     <div class="aurora-bg pointer-events-none">
-        <div class="absolute top-[-20%] right-[-10%] w-[60%] h-[60%] bg-gradient-to-b from-unlimit-lime to-unlimit-teal opacity-30 rounded-full blur-[120px] animate-blob"></div>
-        <div class="absolute bottom-[-20%] left-[-10%] w-[50%] h-[50%] bg-gradient-to-t from-unlimit-cyan to-unlimit-teal opacity-30 rounded-full blur-[100px] animate-blob" style="animation-delay: 2s;"></div>
-        <div class="absolute top-[40%] left-[40%] w-[30%] h-[30%] bg-unlimit-purpleLight opacity-20 rounded-full blur-[80px] animate-blob" style="animation-delay: 4s;"></div>
+        <div class="absolute top-[-15%] right-[-10%] w-[65%] h-[65%] bg-gradient-to-br from-[#06DBF3] via-[#C9F73A] to-[#416BD6] opacity-35 rounded-full blur-[110px] animate-blob"></div>
+        <div class="absolute bottom-[-15%] left-[-10%] w-[55%] h-[55%] bg-gradient-to-t from-[#C9F73A] via-[#06DBF3] to-[#416BD6] opacity-30 rounded-full blur-[100px] animate-blob" style="animation-delay: 2s;"></div>
+        <div class="absolute top-[35%] left-[35%] w-[35%] h-[35%] bg-[#416BD6] opacity-15 rounded-full blur-[90px] animate-blob" style="animation-delay: 4s;"></div>
     </div>
 
-    <header class="sticky top-0 z-50 w-full px-6 py-4 glass-panel border-b border-slate-100 shadow-sm transition-all duration-300">
-        <div class="max-w-7xl mx-auto flex items-center">
-            <div class="flex items-center cursor-pointer" onclick="showHome()">
-                <span class="logo-font text-xl md:text-2xl font-bold text-slate-800 tracking-tight">Unlimit <span class="text-unlimit-purple">Academy 🎓</span></span>
+    <header class="sticky top-0 z-50 w-full px-6 py-3 glass-panel border-b border-slate-100 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-3 cursor-pointer" onclick="showHome()">
+                <span class="logo-font text-lg md:text-xl font-semibold text-slate-800 tracking-tight">Unlimit <span class="text-unlimit-purple">Academy 🎓</span></span>
             </div>
         </div>
     </header>
 
-    <main class="flex-grow w-full max-w-7xl mx-auto px-4 py-8 md:py-12 relative z-30">
+    <main class="flex-grow w-full max-w-7xl mx-auto px-4 py-6 md:py-8 relative z-30 flex flex-col justify-center">
         
-        <div id="home-view" class="space-y-12 animate-fade-in">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 drop-shadow-sm mb-6">Welcome to the Unlimit Academy</h2>
-                <p class="text-lg text-slate-600 font-medium leading-relaxed">To help you ramp up quickly and understand our business, products, and industry, all new employees complete a structured onboarding learning path through the Unlimit Academy.</p>
+        <div id="home-view" class="space-y-6 md:space-y-8 animate-fade-in">
+            <div class="text-center max-w-3xl mx-auto mb-2">
+                <h2 class="text-3xl md:text-4xl font-black text-slate-900 tracking-tight mb-3 leading-tight">Welcome to the Unlimit Academy</h2>
+                <p class="text-sm md:text-base text-slate-600 font-medium leading-relaxed">To help you ramp up quickly and understand our business, products, and industry, all new employees complete a structured onboarding learning path through the Unlimit Academy.</p>
             </div>
             
-            <div id="courses-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8"></div>
+            <div id="courses-grid" class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6"></div>
         </div>
 
         <div id="course-view" class="animate-fade-in hidden">
-            <div class="mb-8">
-                <button onclick="showHome()" class="flex items-center text-unlimit-purple font-semibold hover:text-indigo-800 transition-colors bg-white/50 px-4 py-2 rounded-lg backdrop-blur-sm border border-white">
-                    <i data-lucide="arrow-left" class="w-5 h-5 mr-2"></i>
+            <div class="mb-5">
+                <button onclick="showHome()" class="flex items-center text-[#416BD6] text-sm font-bold hover:text-blue-800 transition-colors bg-white/80 hover:bg-white px-4 py-2 rounded-xl border border-slate-100 shadow-sm">
+                    <i data-lucide="arrow-left" class="w-4 h-4 mr-1.5"></i>
                     Back to Academy Home
                 </button>
             </div>
             
-            <div class="mb-12 glass-panel p-8 rounded-2xl flex flex-col md:flex-row items-center md:items-start gap-6">
-                <div id="course-header-icon" class="p-4 bg-white rounded-xl shadow-sm text-unlimit-purple border border-slate-100 shrink-0"></div>
-                <div class="flex-grow">
-                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-2">
-                        <h2 id="course-view-title" class="text-3xl md:text-4xl font-extrabold text-slate-900"></h2>
-                        <a id="course-main-link" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-bold bg-unlimit-purple text-white px-4 py-2 rounded-xl hover:bg-opacity-90 transition-all shadow-sm">
-                            Open Dashboard <i data-lucide="external-link" class="w-4 h-4"></i>
+            <div class="mb-8 glass-panel p-6 rounded-2xl flex flex-col md:flex-row items-center md:items-start gap-5 border border-slate-100/50">
+                <div id="course-header-icon" class="p-3 bg-[#C9F73A]/15 rounded-xl border border-[#C9F73A]/20 text-[#416BD6] shrink-0"></div>
+                <div class="flex-grow w-full">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 mb-2">
+                        <h2 id="course-view-title" class="text-2xl md:text-3xl font-black text-slate-900 tracking-tight"></h2>
+                        <a id="course-main-link" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold border-2 border-[#416BD6] text-[#416BD6] bg-white px-4 py-2 rounded-xl hover:bg-[#416BD6]/5 transition-all shadow-sm">
+                            Open Dashboard <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
                         </a>
                     </div>
-                    <p id="course-view-desc" class="text-lg text-slate-600 font-medium"></p>
+                    <p id="course-view-desc" class="text-sm text-slate-600 font-medium leading-relaxed"></p>
                 </div>
             </div>
             
             <div>
-                <h3 class="text-xl font-mono text-slate-500 mb-6 uppercase tracking-wider pl-2">Course Syllabus & Chapters</h3>
-                <div id="chapters-container" class="grid grid-cols-1 lg:grid-cols-2 gap-5"></div>
+                <h3 class="text-xs font-bold text-slate-400 mb-4 uppercase tracking-wider pl-2 font-mono">Course Syllabus & Chapters</h3>
+                <div id="chapters-container" class="grid grid-cols-1 lg:grid-cols-2 gap-4"></div>
             </div>
         </div>
 
     </main>
 
-    <footer class="glass-panel border-t border-white/50 mt-auto py-6 relative z-30">
-        <div class="container mx-auto text-center text-slate-500 font-mono text-sm">
+    <footer class="glass-panel border-t border-slate-100 mt-auto py-4 relative z-30">
+        <div class="container mx-auto text-center text-slate-400 font-medium text-xs">
             <p>© 2026 Unlimit Academy. Learn, build, and transform the industry.</p>
         </div>
     </footer>
@@ -193,7 +218,7 @@
                     { title: "Chapter 1: The Payments Ecosystem", url: "https://confluence.unl24.com/display/C2FIF1/Chapter+1%3A+The+Payments+Ecosystem", desc: "Introduction to processing gates, acquirers, issuers, and financial flow." },
                     { title: "Chapter 2: Card Payments: Features & Pricing", url: "https://confluence.unl24.com/pages/viewpage.action?pageId=284900700", desc: "Interchange fees, card scheme mechanisms, and basic pricing models." },
                     { title: "Chapter 3: Alternative Payment Methods (APMs)", url: "https://confluence.unl24.com/pages/viewpage.action?pageId=284900703", desc: "E-wallets, instant transfers, and local payment methods globally." },
-                    { title: "Chapter 4: Industries & Merchant Profiles", url: "https://confluence.unl24.com/pages/viewpage.action?pageId=284900707", desc: "Understanding the targets: high-risk vs. low-risk merchants and businesses." },
+                    { title: "Chapter 4: Industries & Merchant Profiles", url: "https://conlimit.unl24.com/pages/viewpage.action?pageId=284900707", desc: "Understanding the targets: high-risk vs. low-risk merchants and businesses." },
                     { title: "Chapter 5: Fraud & Risk — Market View", url: "https://confluence.unl24.com/pages/viewpage.action?pageId=284900710", desc: "How to spot malicious behavior, chargebacks, and security standards." },
                     { title: "Chapter 6: Fintech Glossary", url: "https://confluence.unl24.com/pages/viewpage.action?pageId=284900712", desc: "Simple, highly practical reference dictionary of payment jargon." },
                     { title: "Chapter 7: Data Protection", url: "https://confluence.unl24.com/display/C2FIF1/Chapter+7%3A+Data+Protection", desc: "GDPR framework and processing merchant/cardholder information securely." },
@@ -250,19 +275,21 @@
             
             for (const [courseName, data] of Object.entries(academyData)) {
                 const card = document.createElement('div');
-                card.className = "visual-card glass-panel p-8 rounded-2xl cursor-pointer flex flex-col h-full group animate-fade-in";
+                card.className = "visual-card p-6 rounded-2xl cursor-pointer flex flex-col h-full group animate-fade-in";
                 card.style.animationDelay = `${delay}ms`;
                 card.onclick = () => showCourse(courseName);
 
                 card.innerHTML = `
-                    <div class="mb-5 w-16 h-16 rounded-2xl bg-white border border-slate-100 flex items-center justify-center text-unlimit-purple shadow-sm group-hover:scale-110 transition-transform">
-                        <i data-lucide="${data.icon}" class="w-8 h-8"></i>
+                    <div class="mb-4 w-12 h-12 rounded-xl bg-[#416BD6]/5 flex items-center justify-center text-[#416BD6] group-hover:scale-110 group-hover:bg-[#416BD6] group-hover:text-white transition-all duration-300">
+                        <i data-lucide="${data.icon}" class="w-6 h-6"></i>
                     </div>
-                    <div class="text-xs font-bold text-unlimit-teal uppercase tracking-wider font-mono mb-1">${data.subtitle}</div>
-                    <h3 class="text-2xl font-bold text-slate-900 mb-3 tracking-tight">${courseName}</h3>
-                    <p class="text-slate-600 font-medium leading-relaxed flex-grow">${data.description}</p>
-                    <div class="mt-6 text-sm font-bold text-unlimit-purple flex items-center gap-1 opacity-80 group-hover:opacity-100 transition-opacity">
-                        View Syllabus <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    <div class="inline-block self-start px-2 py-0.5 text-[9px] font-black text-slate-900 bg-[#C9F73A] rounded uppercase tracking-wider mb-2">
+                        ${data.subtitle}
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-950 mb-2 tracking-tight group-hover:text-[#416BD6] transition-colors leading-snug">${courseName}</h3>
+                    <p class="text-slate-600 text-xs font-medium leading-relaxed flex-grow">${data.description}</p>
+                    <div class="mt-4 text-[11px] font-bold text-[#416BD6] flex items-center gap-1 opacity-90 group-hover:opacity-100 transition-opacity">
+                        Explore Syllabus <i data-lucide="arrow-right" class="w-3 h-3"></i>
                     </div>
                 `;
                 coursesGrid.appendChild(card);
@@ -277,7 +304,7 @@
             document.getElementById('course-view-title').textContent = courseName;
             document.getElementById('course-view-desc').textContent = course.description;
             document.getElementById('course-main-link').href = course.mainUrl;
-            document.getElementById('course-header-icon').innerHTML = `<i data-lucide="${course.icon}" class="w-10 h-10"></i>`;
+            document.getElementById('course-header-icon').innerHTML = `<i data-lucide="${course.icon}" class="w-8 h-8"></i>`;
             
             chaptersContainer.innerHTML = '';
             let delay = 0;
@@ -287,20 +314,20 @@
                 item.href = chapter.url;
                 item.target = "_blank";
                 item.rel = "noopener noreferrer";
-                item.className = "block visual-card p-6 rounded-xl hover:border-unlimit-lime transition-all duration-300 h-full flex flex-col group animate-fade-in";
+                item.className = "block visual-card p-5 rounded-xl hover:border-[#416BD6] transition-all duration-300 h-full flex flex-col group animate-fade-in";
                 item.style.animationDelay = `${delay}ms`;
 
                 item.innerHTML = `
                     <div class="flex items-start gap-4">
-                        <div class="p-2 bg-white rounded-lg shadow-sm shrink-0 border border-slate-100 text-unlimit-purple group-hover:bg-unlimit-purple group-hover:text-white transition-all">
-                            <i data-lucide="book-open" class="w-5 h-5"></i>
+                        <div class="p-2 bg-[#C9F73A]/15 rounded-lg shrink-0 border border-[#C9F73A]/20 text-[#416BD6] group-hover:bg-[#416BD6] group-hover:text-white transition-all">
+                            <i data-lucide="book-open" class="w-4 h-4"></i>
                         </div>
                         <div class="flex-grow">
-                            <h4 class="text-lg font-bold text-slate-800 leading-tight mb-1 group-hover:text-unlimit-purple transition-colors">${chapter.title}</h4>
-                            <p class="text-sm text-slate-600 font-medium leading-relaxed">${chapter.desc}</p>
+                            <h4 class="text-base font-bold text-slate-900 leading-tight mb-0.5 group-hover:text-[#416BD6] transition-colors">${chapter.title}</h4>
+                            <p class="text-xs text-slate-500 font-medium leading-relaxed">${chapter.desc}</p>
                         </div>
-                        <div class="shrink-0 text-slate-300 group-hover:text-unlimit-teal transition-colors">
-                            <i data-lucide="external-link" class="w-5 h-5"></i>
+                        <div class="shrink-0 text-slate-300 group-hover:text-[#416BD6] transition-colors">
+                            <i data-lucide="external-link" class="w-4 h-4"></i>
                         </div>
                     </div>
                 `;
